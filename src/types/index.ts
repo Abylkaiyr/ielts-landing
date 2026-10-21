@@ -63,3 +63,14 @@ export interface Certificate {
   src: string;
   alt: string;
 }
+
+export interface CourseDetail {
+  id: string;
+  tag: string;
+  title: string;
+  description: string;
+  videoShowcase: VideoCard[];
+  tariffs: Tariff[];
+  reviewsSection: Review[];
+  faq: FaqItem[];
+}
