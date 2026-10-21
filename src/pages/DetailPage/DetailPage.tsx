@@ -84,16 +84,17 @@ const DetailPage = ({ onOpenDemo, pendingSection, onSectionScrolled }: DetailPag
               { emoji: '🔴', title: 'Настоящие уроки, а не автовебинары', text: 'Никакого заранее записанного контента — только живое интерактивное общение с преподавателем на каждом занятии.' },
               { emoji: '🎥', title: 'Записи всех уроков', text: 'Смотрите и повторяйте материал в любое удобное время, если пропустили занятие.' },
               { emoji: '👥', title: 'Мини-группы', text: 'Всего 5–6 учеников в онлайн-группе для максимальной устной практики.' },
+              { emoji: '⏱️', title: 'Удобные графики на выбор', text: '', schedule: true },
               { emoji: '🗣️', title: 'Разговорная практика', text: 'Каждые 2 недели проводятся полноценные Speaking-сессии.' },
               { emoji: '💻', title: 'Онлайн на удобной платформе', text: 'Все учебные материалы и тесты хранятся в одном личном кабинете.' },
             ].map((step, i) => (
               <div
                 key={i}
-                className={`${styles.processCard} ${i === 3 ? styles.accentLeft : ''}`}
+                className={`${styles.processCard} ${step.schedule ? styles.accentLeft : ''}`}
               >
                 <div className={styles.processEmoji}>{step.emoji}</div>
                 <h3 className={styles.processCardTitle}>{step.title}</h3>
-                {i === 3 ? (
+                {step.schedule ? (
                   <ul className={styles.processList}>
                     <li><i className="fa-solid fa-check"></i><span>Пн / Ср / Пт — по 1 часу</span></li>
                     <li><i className="fa-solid fa-check"></i><span>Вт / Чт — по 1,5 часа</span></li>
