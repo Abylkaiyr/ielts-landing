@@ -73,4 +73,5 @@ export interface CourseDetail {
   tariffs: Tariff[];
   reviewsSection: Review[];
   faq: FaqItem[];
+  dsa: string;
 }
