@@ -1,0 +1,66 @@
+@import '../../styles/variables.less';
+
+.footer {
+  background: #fff;
+  color: @navy-950;
+  padding: 4rem 1.5rem 3rem;
+  border-top: 1px solid @slate-200;
+
+  @media (min-width: @tablet) {
+    padding: 4rem 3rem 3rem;
+  }
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+
+  @media (min-width: @mobile) {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.brand {
+  font-family: @font-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: @navy-950;
+  display: block;
+}
+
+.copy {
+  font-size: 0.75rem;
+  color: @slate-400;
+  margin-top: 0.25rem;
+}
+
+.waBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: @emerald-600;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+  text-decoration: none;
+  transition: @transition-fast;
+
+  i {
+    font-size: 1.125rem;
+  }
+
+  &:hover {
+    background: @emerald-700;
+  }
+}

@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import VideoSection from '../../sections/VideoSection/VideoSection';
 import TariffsSection from '../../sections/TariffsSection/TariffsSection';
+import ReviewsSection from '../../sections/ReviewsSection/ReviewsSection';
+import FaqSection from '../../sections/FaqSection/FaqSection';
 import styles from './DetailPage.module.less';
 
 interface DetailPageProps {
@@ -107,6 +109,8 @@ const DetailPage = ({ onOpenDemo, pendingSection, onSectionScrolled }: DetailPag
 
       <VideoSection onOpenDemo={onOpenDemo} />
       <TariffsSection onOpenDemo={onOpenDemo} />
+      <ReviewsSection />
+      <FaqSection />
     </div>
   );
 };

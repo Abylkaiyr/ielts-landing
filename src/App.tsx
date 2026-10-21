@@ -3,6 +3,7 @@ import { useView } from './hooks/useView';
 import Header from './components/Header/Header';
 import NavDrawer from './components/NavDrawer/NavDrawer';
 import DemoModal from './components/DemoModal/DemoModal';
+import Footer from './components/Footer/Footer';
 import MainPage from './pages/MainPage/MainPage';
 import DetailPage from './pages/DetailPage/DetailPage';
 import TeacherPage from './pages/TeacherPage/TeacherPage';
@@ -56,6 +57,8 @@ const App = () => {
       {currentView === 'teacher' && (
         <TeacherPage onOpenDemo={openDemo} />
       )}
+
+      <Footer />
     </>
   );
 };
