@@ -1,0 +1,152 @@
+@import '../../styles/variables.less';
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal {
+  background: #fff;
+  border-radius: @radius-lg;
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: @slate-400;
+  font-size: 1.25rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: @navy-950;
+  }
+}
+
+.title {
+  font-family: @font-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: @navy-950;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: @slate-600;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: @navy-900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input {
+  padding: 0.75rem 1rem;
+  border: 1px solid @slate-200;
+  border-radius: @radius-sm;
+  font-size: 0.875rem;
+  font-family: @font-sans;
+  color: @navy-950;
+  transition: border-color 0.2s ease;
+  outline: none;
+
+  &:focus {
+    border-color: @navy-800;
+  }
+
+  &::placeholder {
+    color: @slate-400;
+  }
+}
+
+.submitBtn {
+  background: @navy-800;
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: @radius-sm;
+  font-size: 0.9375rem;
+  transition: @transition-fast;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  border: none;
+
+  &:hover {
+    background: #17314f;
+    box-shadow: @shadow-btn;
+  }
+}
+
+.whatsappLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: @emerald-50;
+  color: @emerald-700;
+  border: 1px solid #a7f3d0;
+  font-weight: 600;
+  padding: 0.875rem;
+  border-radius: @radius-sm;
+  font-size: 0.875rem;
+  transition: @transition-fast;
+  text-decoration: none;
+
+  &:hover {
+    background: @emerald-600;
+    color: #fff;
+  }
+}
+
+.divider {
+  text-align: center;
+  font-size: 0.75rem;
+  color: @slate-400;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: @slate-200;
+  }
+
+  &::before { left: 0; }
+  &::after { right: 0; }
+}

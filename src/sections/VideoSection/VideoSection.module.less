@@ -1,0 +1,302 @@
+@import '../../styles/variables.less';
+
+.section {
+  background: #0f172a;
+  color: #fff;
+  padding: 5rem 1.5rem;
+  border-top: 1px solid #1e293b;
+  position: relative;
+  overflow: hidden;
+
+  @media (min-width: @tablet) {
+    padding: 5rem 3rem;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+    pointer-events: none;
+  }
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.heading {
+  text-align: center;
+  max-width: 768px;
+  margin: 0 auto 4rem;
+}
+
+.eyebrowWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: @amber-400;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: @font-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+
+  @media (min-width: @mobile) {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  color: #cbd5e1;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 auto;
+
+  @media (min-width: @mobile) {
+    font-size: 1rem;
+  }
+}
+
+.divider {
+  width: 4rem;
+  height: 4px;
+  background: @amber-500;
+  border-radius: 9999px;
+  margin: 1.5rem auto 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @media (min-width: @desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.videoCard {
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid rgba(51, 65, 85, 0.8);
+  border-radius: @radius-lg;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  transition: @transition-base;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    border-color: rgba(239, 68, 68, 0.8);
+    transform: scale(1.02);
+  }
+}
+
+.thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(51, 65, 85, 0.8);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .videoCard:hover & img {
+    transform: scale(1.05);
+  }
+}
+
+.thumbOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.05), transparent);
+}
+
+.playBtn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 9999px;
+    background: rgba(220, 38, 38, 0.95);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: @transition-fast;
+    padding-left: 4px;
+
+    .videoCard:hover & {
+      transform: scale(1.1);
+      background: #ef4444;
+    }
+  }
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.cardTag {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.375rem;
+}
+
+.tagAmber {
+  color: @amber-400;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.tagSky {
+  color: @sky-400;
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.tagPurple {
+  color: #c084fc;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.yt {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 500;
+
+  i { color: #ef4444; margin-right: 0.25rem; }
+}
+
+.cardTitle {
+  font-family: @font-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.cardDesc {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.cardFooter {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(51, 65, 85, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #f87171;
+  transition: color 0.2s ease;
+
+  .videoCard:hover & {
+    color: #fca5a5;
+  }
+}
+
+.cta {
+  margin-top: 3rem;
+  background: linear-gradient(to right, @navy-800, #1e293b);
+  border-radius: @radius-lg;
+  padding: 1.5rem;
+  border: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+
+  @media (min-width: @mobile) {
+    flex-direction: row;
+    padding: 2rem;
+  }
+}
+
+.ctaText {
+  h4 {
+    font-family: @font-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: #cbd5e1;
+  }
+}
+
+.ctaBtn {
+  background: @navy-800;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: @transition-fast;
+  cursor: pointer;
+  border: none;
+  font-family: @font-sans;
+
+  &:hover {
+    background: #17314f;
+  }
+}
